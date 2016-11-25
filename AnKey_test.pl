@@ -13,22 +13,3 @@ my $data = $read->[0];
 
 print Dumper($data);
 
-my $cnt = 1;
-
-=pod
-my $ques = values();
-print "--------Hello, Ankey-------\n\n";
-print "What is the meaning of this word ?\n $cnt : $ques => ";
-
-
-my $input = <STDIN>;
-chomp $input;
-my $ans = $data->{one};
-
-if ($input eq $ans){
-	print "OK!\n";
-}else{
-       	print "NG!\n";
-	}
-
-=cut
