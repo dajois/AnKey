@@ -1,15 +1,16 @@
 #!/usr/bin/env perl
 
 use strict;
-use YAML::Tiny;
-use Data::Dumper;
+use warnings;
 use utf8;
-binmode STDIN,  ":utf8";
-binmode STDOUT, ":utf8";
+use JSON::XS; 
 
-my $yaml = YAML::Tiny->new;
-my $read = $yaml->read( 'data.yaml' );
-my $data = $read->[0];
+my $json_text = '{"spam": "egg"}';
+my $obj = decode_json($json_text);
 
-print Dumper($data);
+print $obj->{'spam'}, "\n"; # => 'egg'
 
+$json_text = encode_json($obj);
+
+
+print $json_text, "\n"; # => '{"spam":"egg"}'
