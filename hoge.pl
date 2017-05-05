@@ -1,5 +1,6 @@
 #!/usr/bin/env perl
-
+use strict;
+use warnings;
 use JSON;
 open ( my $fh , '<' , $filepath ) || die "cannot open $!" ; 
 my $data ;
